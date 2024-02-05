@@ -188,5 +188,5 @@ def make_anonymous_factorial():
     >>> check(HW_SOURCE_FILE, 'make_anonymous_factorial', ['Assign', 'AugAssign', 'FunctionDef', 'Recursion'])
     True
     """
-    return 'YOUR_EXPRESSION_HERE'
+    return lambda n: (lambda f: f(f))(lambda f: lambda x: 1 if x == 1 else mul(x, f(f)(sub(x, 1))))(n)
 
